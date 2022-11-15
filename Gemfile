@@ -16,9 +16,7 @@ gem "mysql2", "~> 0.5"
 gem "puma", "~> 5.0"
 
 gem "simple_form" , "~>5.1.0"
-
-gem "devise"
-
+# gem "devise"
 gem 'redis'
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
