@@ -1,13 +1,14 @@
 <%= turbo_stream_from current_company, "quotes" %>
 
 <div class="container">
+ 
   <%= turbo_frame_tag "quote" do%>
-      <div class="header">
-        <h1>Quotes</h1>
-        <%= link_to "New quote", new_quote_path ,class: "btn btn--primary",data: { turbo_frame: dom_id(Quote.new) } %>
-      </div>
-
+    <div class="header">
+      <h1>Quotes</h1>
+      <%= link_to "New quote", new_quote_path ,class: "btn btn--primary",data: { turbo_frame: dom_id(Quote.new) } %>
+    </div>
   <%end%>
+
 
   <%= turbo_frame_tag Quote.new do %>
     <% if @quotes.none? %>
