@@ -1,18 +1,24 @@
-<%= turbo_stream_from current_company, "quotes" %>
-<%=turbo_stream_from "qoutes" %>
+<%#= turbo_stream_from current_company, "quotes" %>
+<%#=turbo_stream_from "qoutes" %>
 
 <div class="container">
-  <%= turbo_frame_tag "quote" do %>
+
+  <%# frame_id = dom_id(@quote, "name_turbo_frame") %> 
+  <%= turbo_frame_tag "new_turbo_frame" do %>
     <div class="header">
-      <h1>Quotes</h1>
-      <%= link_to "New quote", new_quote_path ,class: "btn btn--primary",data: { turbo_frame: dom_id(Quote.new) } %>
+      <h1>Quotes</h1> 
+      <%= link_to "New quote", new_quote_path ,class: "btn btn--primary" %>
     </div>
   <% end %>
 
-  <%= turbo_frame_tag Quote.new %>
-  <%= turbo_frame_tag "quotes" do%>
+  <%#= turbo_frame_tag Quote.new %>
+
+  <%#= turbo_frame_tag "quotes" do%>
     <%= render @quotes %>
-  <%end%>
+  <%#end%>
+
 
 </div>
+
+
 
