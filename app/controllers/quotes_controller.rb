@@ -1,8 +1,9 @@
 class QuotesController < ApplicationController
   before_action :set_quote, only: %i[show edit update destroy]
 
-  def index
-    @quotes = current_company.quotes.ordered
+  def index 
+    
+      @quotes = current_company.quotes.ordered
   end
 
   def show
@@ -30,9 +31,11 @@ class QuotesController < ApplicationController
   def edit
   end
 
+
   def update
     if @quote.update(quote_params)
-      respond_to do |format|
+ 
+     respond_to do |format|
         format.html{redirect_to quotes_path, notice: "Quote was successfully updated."}
         format.turbo_stream { flash.now[:notice] = "Quote was successfully updated." }
       end
@@ -41,6 +44,7 @@ class QuotesController < ApplicationController
     end
   end
 
+
   def destroy
     @quote.destroy
     respond_to do |format|
@@ -48,6 +52,7 @@ class QuotesController < ApplicationController
       format.turbo_stream { flash.now[:notice] = "Quote was successfully destroyed." }
     end
   end
+
 
   private
   def quote_params
@@ -59,3 +64,6 @@ class QuotesController < ApplicationController
   end
 
 end
+
+
+
